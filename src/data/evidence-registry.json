@@ -1,0 +1,65 @@
+[
+  {
+    "id": "teddy-mia-high-hla-all-grs", "stage": "autoimmunity", "label": "Persistent multiple islet autoantibodies by age 6: two high-risk HLA genotypes", "estimateType": "absolute-risk",
+    "point": 0.058, "lower95": 0.05, "upper95": 0.066, "contrast": "All merged genetic-score values", "horizon": "By age 6 years",
+    "population": "TEDDY children from the US, Finland, Germany, and Sweden with HLA DR3/DR4-DQ8 or DR4-DQ8/DR4-DQ8, no first-degree relative with T1D, followed prospectively from birth", "sampleSize": "n=4,543",
+    "applicabilityWarning": "Not established for other HLA genotypes, children with a first-degree relative with T1D, adults, or population-wide screening. Genetic scores were developed mainly in European-ancestry case-control data.",
+    "citation": { "title": "Genetic scores to stratify risk of developing multiple islet autoantibodies and type 1 diabetes: A prospective study in children", "authors": "Bonifacio et al.", "year": 2018, "journal": "PLOS Medicine", "doi": "10.1371/journal.pmed.1002548", "url": "https://doi.org/10.1371/journal.pmed.1002548" }
+  },
+  {
+    "id": "teddy-mia-grs-high", "stage": "autoimmunity", "label": "Persistent multiple islet autoantibodies by age 6: merged GRS >14.4", "estimateType": "absolute-risk",
+    "point": 0.11, "lower95": 0.087, "upper95": 0.133, "contrast": "Merged 41-variant genetic score >14.4 (upper quartile)", "horizon": "By age 6 years",
+    "population": "TEDDY children with HLA DR3/DR4-DQ8 or DR4-DQ8/DR4-DQ8, no first-degree relative with T1D", "sampleSize": "n=907",
+    "applicabilityWarning": "Requires the paper's merged genetic score, not a consumer DNA result or an unweighted SNP count. Not established outside the two HLA genotypes or in children with family history.",
+    "citation": { "title": "Genetic scores to stratify risk of developing multiple islet autoantibodies and type 1 diabetes: A prospective study in children", "authors": "Bonifacio et al.", "year": 2018, "journal": "PLOS Medicine", "doi": "10.1371/journal.pmed.1002548", "url": "https://doi.org/10.1371/journal.pmed.1002548" }
+  },
+  {
+    "id": "teddy-mia-grs-not-high", "stage": "autoimmunity", "label": "Persistent multiple islet autoantibodies by age 6: merged GRS ≤14.4", "estimateType": "absolute-risk",
+    "point": 0.041, "lower95": 0.033, "upper95": 0.049, "contrast": "Merged 41-variant genetic score ≤14.4", "horizon": "By age 6 years",
+    "population": "TEDDY children with HLA DR3/DR4-DQ8 or DR4-DQ8/DR4-DQ8, no first-degree relative with T1D", "sampleSize": "n=2,591",
+    "applicabilityWarning": "Requires the paper's merged genetic score. This lower-score group is not a general-population reference group.",
+    "citation": { "title": "Genetic scores to stratify risk of developing multiple islet autoantibodies and type 1 diabetes: A prospective study in children", "authors": "Bonifacio et al.", "year": 2018, "journal": "PLOS Medicine", "doi": "10.1371/journal.pmed.1002548", "url": "https://doi.org/10.1371/journal.pmed.1002548" }
+  },
+  {
+    "id": "pooled-single-ab-10y", "stage": "progression", "label": "Clinical T1D after single-autoantibody seroconversion", "estimateType": "absolute-risk",
+    "point": 0.145, "lower95": 0.103, "upper95": 0.187, "contrast": "Persistent single islet autoantibody", "horizon": "10 years after seroconversion",
+    "population": "Children genetically at risk in prospective cohorts from Colorado, Finland, and Germany", "sampleSize": "n=474 with a single autoantibody",
+    "applicabilityWarning": "Applies to prospectively followed, genetically at-risk children after confirmed seroconversion; not validated for adults, incidental one-time tests, or general-population use.",
+    "citation": { "title": "Seroconversion to multiple islet autoantibodies and risk of progression to diabetes in children", "authors": "Ziegler et al.", "year": 2013, "journal": "JAMA", "doi": "10.1001/jama.2013.6285", "url": "https://doi.org/10.1001/jama.2013.6285" }
+  },
+  {
+    "id": "pooled-multiple-ab-10y", "stage": "progression", "label": "Clinical T1D after multiple-autoantibody seroconversion", "estimateType": "absolute-risk",
+    "point": 0.697, "lower95": 0.651, "upper95": 0.743, "contrast": "Two or more persistent islet autoantibodies", "horizon": "10 years after seroconversion",
+    "population": "Children genetically at risk in prospective cohorts from Colorado, Finland, and Germany", "sampleSize": "n=585 with multiple autoantibodies",
+    "applicabilityWarning": "Applies after confirmed persistent multiple-autoantibody seroconversion in genetically at-risk children. It is not an individual diagnosis or a general-population estimate.",
+    "citation": { "title": "Seroconversion to multiple islet autoantibodies and risk of progression to diabetes in children", "authors": "Ziegler et al.", "year": 2013, "journal": "JAMA", "doi": "10.1001/jama.2013.6285", "url": "https://doi.org/10.1001/jama.2013.6285" }
+  },
+  {
+    "id": "pooled-hla-dr3-dr4-hr", "stage": "progression", "label": "HLA DR3/DR4-DQ8 progression modifier", "estimateType": "hazard-ratio",
+    "point": 1.35, "lower95": 1.09, "upper95": 1.68, "contrast": "DR3/DR4-DQ8 versus other HLA genotypes among children with multiple autoantibodies", "horizon": "Time from seroconversion; proportional-hazards estimate",
+    "population": "Children with multiple islet autoantibodies in pooled Colorado, Finland, and Germany cohorts", "sampleSize": "Within n=585 multiple-autoantibody participants",
+    "applicabilityWarning": "Published for progression after multiple-autoantibody seroconversion; this explorer does not apply it to single-autoantibody scenarios.",
+    "citation": { "title": "Seroconversion to multiple islet autoantibodies and risk of progression to diabetes in children", "authors": "Ziegler et al.", "year": 2013, "journal": "JAMA", "doi": "10.1001/jama.2013.6285", "url": "https://doi.org/10.1001/jama.2013.6285" }
+  },
+  {
+    "id": "pooled-young-seroconversion-hr", "stage": "progression", "label": "Seroconversion before age 3 progression modifier", "estimateType": "hazard-ratio",
+    "point": 1.65, "lower95": 1.3, "upper95": 2.09, "contrast": "Seroconversion before age 3 versus age 3 or older among children with multiple autoantibodies", "horizon": "Time from seroconversion; proportional-hazards estimate",
+    "population": "Children with multiple islet autoantibodies in pooled Colorado, Finland, and Germany cohorts", "sampleSize": "Within n=585 multiple-autoantibody participants",
+    "applicabilityWarning": "Age means age at first confirmed seroconversion, not current age. Published only for the multiple-autoantibody analysis.",
+    "citation": { "title": "Seroconversion to multiple islet autoantibodies and risk of progression to diabetes in children", "authors": "Ziegler et al.", "year": 2013, "journal": "JAMA", "doi": "10.1001/jama.2013.6285", "url": "https://doi.org/10.1001/jama.2013.6285" }
+  },
+  {
+    "id": "pooled-female-hr", "stage": "progression", "label": "Female sex progression modifier", "estimateType": "hazard-ratio",
+    "point": 1.28, "lower95": 1.04, "upper95": 1.58, "contrast": "Girls versus boys among children with multiple autoantibodies", "horizon": "Time from seroconversion; proportional-hazards estimate",
+    "population": "Children with multiple islet autoantibodies in pooled Colorado, Finland, and Germany cohorts", "sampleSize": "Within n=585 multiple-autoantibody participants",
+    "applicabilityWarning": "Published only in the multiple-autoantibody pediatric analysis; sex was recorded as a binary study variable.",
+    "citation": { "title": "Seroconversion to multiple islet autoantibodies and risk of progression to diabetes in children", "authors": "Ziegler et al.", "year": 2013, "journal": "JAMA", "doi": "10.1001/jama.2013.6285", "url": "https://doi.org/10.1001/jama.2013.6285" }
+  },
+  {
+    "id": "trialnet-grs-continuous-hr", "stage": "progression", "label": "TrialNet 30-SNP genetic risk score progression association", "estimateType": "hazard-ratio",
+    "point": 1.29, "lower95": 1.06, "upper95": 1.6, "contrast": "Per 0.05 increase in the published 30-SNP T1D genetic risk score", "horizon": "Time to clinical T1D; proportional-hazards estimate",
+    "population": "TrialNet Pathway to Prevention participants with a T1D relative and at least one persistent islet autoantibody", "sampleSize": "n=1,244; median age 11.1 years; median follow-up 5.4 years",
+    "applicabilityWarning": "Not combined numerically because its TrialNet relative population and GRS scale differ from the pooled pediatric anchor cohorts. Included to make the evidence gap explicit.",
+    "citation": { "title": "A Type 1 Diabetes Genetic Risk Score Predicts Progression of Islet Autoimmunity and Development of Type 1 Diabetes in Individuals at Risk", "authors": "Redondo et al.", "year": 2018, "journal": "Diabetes Care", "doi": "10.2337/dc18-0087", "url": "https://doi.org/10.2337/dc18-0087" }
+  }
+]

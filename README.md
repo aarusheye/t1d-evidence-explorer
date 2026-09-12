@@ -18,6 +18,7 @@ The output is deliberately named an **evidence-based risk scenario**. It is not 
 - Leave-one-information-out analysis shows what happens when HLA, SNP/GRS, family-history, or antibody information is unavailable.
 - The engine refuses to extrapolate a Stage 1 number when the profile does not match the published TEDDY population.
 - Ancestry and population transportability limitations are visible in every result.
+- The evidence engine has independent TypeScript and Python implementations, checked against shared parity fixtures in CI.
 
 ## Evidence currently represented
 
@@ -39,7 +40,7 @@ scenario risk = 1 - (1 - sampled anchor risk) ^ product(sampled hazard ratios)
 
 The 2.5th and 97.5th percentiles form the displayed Monte Carlo interval. When an adjusted scenario uses this synthesis, the interface warns that the exact combined probability was not published or validated by the source authors. The random seed and draw count are shown in the result.
 
-## Run locally
+## Run the web application
 
 Requires Node.js 22.
 
@@ -58,11 +59,38 @@ npm run build
 npm audit
 ```
 
+## Run the Python research layer
+
+The Python package reads the same evidence registry as the web application and independently reproduces its eligibility rules, point estimates, deterministic Monte Carlo uncertainty, and missing-information comparisons.
+
+Requires Python 3.11 or newer:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[dev]"
+pytest
+```
+
+Example CLI scenario:
+
+```bash
+t1d-evidence \
+  --question progression \
+  --autoantibodies multiple \
+  --hla dr3-dr4-dq8 \
+  --seroconversion-age under-3 \
+  --sex female
+```
+
+The command prints machine-readable JSON. It remains an educational evidence scenario, not an individual prediction.
+
 ## Project structure
 
 ```text
 src/
 ├── data/evidence-registry.json  # versioned source estimates and metadata
+├── data/parity-scenarios.json   # cross-language expected scenarios
 ├── model/evidence.ts            # registry lookup and integrity validation
 ├── model/scenario.ts            # eligibility logic and Monte Carlo synthesis
 ├── model/scenario.test.ts       # anchors, exclusions, uncertainty, missingness
@@ -70,7 +98,10 @@ src/
 └── pages/                       # Home, scenario builder, results, methods
 docs/
 └── MODEL_CARD.md                # intended use, evidence, validation, limitations
-.github/workflows/ci.yml         # lint, tests, typecheck/build
+python/
+├── t1d_evidence/                # independent evidence and simulation engine
+└── tests/                       # registry, parity, uncertainty, missingness
+.github/workflows/ci.yml         # web and Python verification
 ```
 
 ## Data access and future validation

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "stage1-teddy-upper-grs",
+    "input": { "question": "autoimmunity", "hla": "dr3-dr4-dq8", "geneticScore": "teddy-high", "familyHistory": "none", "autoantibodies": "negative", "seroconversionAge": "unknown", "sex": "male" },
+    "expected": { "status": "estimated", "point": 0.11, "interval95": [0.08880797554338704, 0.13588350778760627], "evidenceIds": ["teddy-mia-grs-high"] }
+  },
+  {
+    "id": "stage1-no-grs-fallback",
+    "input": { "question": "autoimmunity", "hla": "dr4-dq8-homozygous", "geneticScore": "unknown", "familyHistory": "none", "autoantibodies": "negative", "seroconversionAge": "unknown", "sex": "unknown" },
+    "expected": { "status": "estimated", "point": 0.058, "interval95": [0.050472244330966975, 0.0666985968987649], "evidenceIds": ["teddy-mia-high-hla-all-grs"] }
+  },
+  {
+    "id": "stage2-single-anchor",
+    "input": { "question": "progression", "hla": "unknown", "geneticScore": "unknown", "familyHistory": "first-degree", "autoantibodies": "single", "seroconversionAge": "3-or-older", "sex": "male" },
+    "expected": { "status": "estimated", "point": 0.145, "interval95": [0.10707792637283353, 0.1941940683047263], "evidenceIds": ["pooled-single-ab-10y"] }
+  },
+  {
+    "id": "stage2-multiple-modified",
+    "input": { "question": "progression", "hla": "dr3-dr4-dq8", "geneticScore": "unknown", "familyHistory": "unknown", "autoantibodies": "multiple", "seroconversionAge": "under-3", "sex": "female" },
+    "expected": { "status": "estimated", "point": 0.9667731460591535, "interval95": [0.8948549782085664, 0.9941225632375097], "evidenceIds": ["pooled-multiple-ab-10y", "pooled-hla-dr3-dr4-hr", "pooled-young-seroconversion-hr", "pooled-female-hr"] }
+  },
+  {
+    "id": "stage1-ineligible-family-history",
+    "input": { "question": "autoimmunity", "hla": "dr3-dr4-dq8", "geneticScore": "teddy-high", "familyHistory": "first-degree", "autoantibodies": "negative", "seroconversionAge": "unknown", "sex": "unknown" },
+    "expected": { "status": "not-estimable", "point": null, "interval95": null, "evidenceIds": [] }
+  }
+]

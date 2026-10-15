@@ -117,6 +117,12 @@ See [MODEL_CARD.md](docs/MODEL_CARD.md) for detailed intended use, evidence popu
 - Cannot diagnose, screen, treat, or recommend care.
 - All scenario computation runs locally in the browser; inputs are not transmitted.
 
-## License
+## License and Copyright
 
-MIT. See [LICENSE](LICENSE).
+Copyright © 2026 Aarushi Singh. All Rights Reserved.
+
+This project is publicly available for viewing and evaluation purposes. The current proprietary version is not licensed for open-source reuse.
+
+Reproduction, modification, or redistribution requires prior written permission, except as otherwise permitted by applicable law or GitHub's Terms of Service.
+
+Earlier MIT-licensed versions remain governed by their original license.
